@@ -26,21 +26,21 @@
 
 # Пространство имен и способы вызова функции
 
-word = "Join"
-word0 = "game"
-word1 = "type"
-
 def single_root_words(root_word, *other_words):
     same_words = []
-    same_words.append(root_word)
-    same_words.extend(other_words)
 
-    for word in same_words:
-        if " " not in word:
-            print(word)
+    for word in other_words:
+        if root_word.lower() in word.lower() or word.lower() in root_word.lower():
+            same_words.append(word)
+
     return same_words
 
-result = single_root_words(word, word0, word1)
-print("Результат функции:", result)
+
+# Пример использования функции
+result1 = single_root_words('rich', 'richiest', 'orichalcum', 'cheers', 'richies')
+result2 = single_root_words('Disablement', 'Able', 'Mable', 'Disable', 'Bagel')
+
+print(result1)
+print(result2)
 
 
